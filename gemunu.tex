@@ -13,9 +13,9 @@
 \begin{document}
 \section{Main section}
 \begin{frame}\frametitle{Gemunustic}
-\begin{columns}[c]
-\column{.2\textwidth}
-\begin{block}{Euclidean distance}
+
+\newcommand\euclideancoordinatesblock{
+\begin{block}{Euclidean coordinates}
 \begin{itemize}
 \item Usual form
 $$\dif \ell^2 = \dif x^2 + \dif y^2$$
@@ -29,14 +29,37 @@ $$
 $$\dif\vec r=\begin{pmatrix}\dif x\\\dif y\end{pmatrix}$$
 $$g_{\mu\nu}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$$
 $$\dif \ell^2 = \dif\vec r^\top g_{\mu\nu} \dif\vec r $$
+\item Einstein form
+$$\dif \ell^2 = g_{ij}\dif x^i\dif x^j$$
 \end{itemize}
 \end{block}
-\begin{block}{Distance in polar coordinates}
+}
+
+\newcommand\polarcoordinatesblock{
+\begin{block}{Polar coordinates}
 \begin{itemize}
 \item Usual form
-$$\dif \ell^2 = \dif r^2 + r^2\dif \theta^2$$
+$$\dif \ell^2 = \dif r^2 + r^2\dif\theta^2$$
+\item Matrix form
+$$\dif \ell^2 =
+\begin{pmatrix}\dif r&\dif\theta\end{pmatrix}
+\begin{pmatrix}1&0\\0&r\end{pmatrix}
+\begin{pmatrix}\dif r\\\dif\theta\end{pmatrix}
+$$
+\item Concise form
+$$\dif\vec r=\begin{pmatrix}\dif r\\\dif\theta\end{pmatrix}$$
+$$g_{\mu\nu}=\begin{pmatrix}1&0\\0&r\end{pmatrix}$$
+$$\dif \ell^2 = \dif\vec r^\top g_{\mu\nu} \dif\vec r $$
+\item Einstein form
+$$\dif \ell^2 = g_{ij}\dif x^i\dif x^j$$
 \end{itemize}
 \end{block}
+}
+
+\begin{columns}[c]
+\column{.2\textwidth}
+\euclideancoordinatesblock
+\polarcoordinatesblock
 \end{columns}
 \end{frame}
 \end{document}
