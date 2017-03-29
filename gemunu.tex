@@ -1,0 +1,42 @@
+\documentclass[mathserif]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{commath}
+\usepackage[orientation=landscape, size=a2, scale=1]{beamerposter}
+\date{}
+\author{xdptdr}
+\useoutertheme{infolines}
+\useinnertheme{rounded}
+\usecolortheme{dolphin}
+\usecolortheme{rose}
+\beamertemplatenavigationsymbolsempty
+\begin{document}
+\section{Main section}
+\begin{frame}\frametitle{Gemunustic}
+\begin{columns}[c]
+\column{.2\textwidth}
+\begin{block}{Euclidean distance}
+\begin{itemize}
+\item Usual form
+$$\dif \ell^2 = \dif x^2 + \dif y^2$$
+\item Matrix form
+$$\dif \ell^2 =
+\begin{pmatrix}\dif x&\dif y\end{pmatrix}
+\begin{pmatrix}1&0\\0&1\end{pmatrix}
+\begin{pmatrix}\dif x\\\dif y\end{pmatrix}
+$$
+\item Concise form
+$$\dif\vec r=\begin{pmatrix}\dif x\\\dif y\end{pmatrix}$$
+$$g_{\mu\nu}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$$
+$$\dif \ell^2 = \dif\vec r^\top g_{\mu\nu} \dif\vec r $$
+\end{itemize}
+\end{block}
+\begin{block}{Distance in polar coordinates}
+\begin{itemize}
+\item Usual form
+$$\dif \ell^2 = \dif r^2 + r^2\dif \theta^2$$
+\end{itemize}
+\end{block}
+\end{columns}
+\end{frame}
+\end{document}
