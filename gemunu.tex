@@ -3,6 +3,8 @@
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{commath}
 \usepackage[orientation=landscape, size=a2, scale=1]{beamerposter}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 \date{}
 \author{xdptdr}
 \useoutertheme{infolines}
@@ -89,5 +91,50 @@ $$\dif \ell^2 = g_{ij}\dif x^i\dif x^j$$
 \end{block}
 \end{columns}
 
+\end{frame}
+
+\begin{frame}\frametitle{$\Gamma$ for euclidean coordinates}
+\begin{block}{}
+\begin{center}
+
+\newcommand\xh{{\hat{x}}}
+\newcommand\yh{{\hat{y}}}
+
+\begin{tikzpicture}
+
+\node (dev) at (0,10) {$\displaystyle\Gamma^k{}_{ij}=\frac{1}{2}g^{kl}\left(g_{li,j}+g_{lj,i}-g_{ij,l}\right)=\frac{1}{2}g^{k\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{k\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+
+%{}
+\node (a) {$\displaystyle\Gamma^k{}_{ij}=\frac{1}{2}g^{k\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{k\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+
+%{k<-x}
+\node[above = 2cm of a, anchor=south] (b) {$\displaystyle\Gamma^\xh{}_{ij}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+
+%{k<-y}
+\node[below = 2cm of a, anchor=north] (c) {$\displaystyle\Gamma^\yh{}_{ij}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+
+
+%{k<-x, i<-x}
+\node[left = 1cm of b, anchor=east] (d) {$\displaystyle\Gamma^\xh{}_{\xh j}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\xh,j}+g_{\xh j,x}-g_{\xh j,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\xh,j}+g_{\yh j,x}-g_{\xh j,y}\right)$};
+
+%{k<-x, i<-y}
+\node[right = 1cm of b, anchor=west] (e) {$\displaystyle\Gamma^\xh{}_{\yh j}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\yh,j}+g_{\xh j,y}-g_{\yh j,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\yh,j}+g_{\yh j,y}-g_{\yh j,y}\right)$};
+
+%{k<-y, i<-x}
+\node[left = 1cm of c, anchor=east] (f) {$\displaystyle\Gamma^\yh{}_{\xh j}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\xh,j}+g_{\xh j,x}-g_{\xh j,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\xh,j}+g_{\yh j,x}-g_{\xh j,y}\right)$};
+
+%{k<-y, i<-y}
+\node[right = 1cm of c, anchor=west] (g) {$\displaystyle\Gamma^\yh{}_{\yh j}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\yh,j}+g_{\xh j,y}-g_{\yh j,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\yh,j}+g_{\yh j,y}-g_{\yh j,y}\right)$};
+
+\draw[->] (a.north) -> node[above=0pt, sloped] {\tiny$k\leftarrow\xh$} (b.south);
+\draw[->] (a.south) -> node[above=0pt, sloped] {\tiny$k\leftarrow\yh$} (c.north);
+\draw[->] (b.west) -> node[above=0pt, sloped] {\tiny$i\leftarrow\xh$} (d.east);
+\draw[->] (b.east) -> node[above=0pt, sloped] {\tiny$i\leftarrow\yh$} (e.west);
+\draw[->] (c.west) -> node[above=0pt, sloped] {\tiny$i\leftarrow\xh$} (f.east);
+\draw[->] (c.east) -> node[above=0pt, sloped] {\tiny$i\leftarrow\yh$} (g.west);
+
+\end{tikzpicture}
+\end{center}
+\end{block}
 \end{frame}
 \end{document}
