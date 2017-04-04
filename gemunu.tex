@@ -102,36 +102,89 @@ $$\dif \ell^2 = g_{ij}\dif x^i\dif x^j$$
 
 \begin{tikzpicture}
 
-\node (dev) at (0,10) {$\displaystyle\Gamma^k{}_{ij}=\frac{1}{2}g^{kl}\left(g_{li,j}+g_{lj,i}-g_{ij,l}\right)=\frac{1}{2}g^{k\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{k\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+\node (gamma) at (0,10) {$\displaystyle\Gamma^k{}_{ij}=\frac{1}{2}g^{kl}\left(g_{li,j}+g_{lj,i}-g_{ij,l}\right)=\frac{1}{2}g^{k\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{k\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+
+\node[below = 1.5cm of gamma, anchor = south] (gemunuba)  {$\displaystyle g_{\mu\nu}=\begin{pmatrix}g_{\xh\xh}&g_{\xh\yh}\\g_{\yh\xh}&g_{\yh\yh}\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$};
+\node[below = 1.5cm of gemunuba, anchor = south] (gemunuo)  {$\displaystyle g^{\mu\nu}=\begin{pmatrix}g^{\xh\xh}&g^{\xh\yh}\\g^{\yh\xh}&g^{\yh\yh}\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$};
+
 
 %{}
-\node (a) {$\displaystyle\Gamma^k{}_{ij}=\frac{1}{2}g^{k\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{k\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+\node (root) {$\displaystyle\Gamma^k{}_{ij}=\frac{1}{2}g^{k\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{k\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
 
 %{k<-x}
-\node[above = 2cm of a, anchor=south] (b) {$\displaystyle\Gamma^\xh{}_{ij}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+\node[above = 2cm of root, anchor=south] (x) {$\displaystyle\Gamma^\xh{}_{ij}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
 
 %{k<-y}
-\node[below = 2cm of a, anchor=north] (c) {$\displaystyle\Gamma^\yh{}_{ij}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
+\node[below = 2cm of root, anchor=north] (y) {$\displaystyle\Gamma^\yh{}_{ij}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh i,j}+g_{\xh j,i}-g_{ij,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh i,j}+g_{\yh j,i}-g_{ij,y}\right)$};
 
 
 %{k<-x, i<-x}
-\node[left = 1cm of b, anchor=east] (d) {$\displaystyle\Gamma^\xh{}_{\xh j}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\xh,j}+g_{\xh j,x}-g_{\xh j,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\xh,j}+g_{\yh j,x}-g_{\xh j,y}\right)$};
+\node[left = 1cm of x, anchor=east] (xx) {$\displaystyle\Gamma^\xh{}_{\xh j}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\xh,j}+g_{\xh j,x}-g_{\xh j,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\xh,j}+g_{\yh j,x}-g_{\xh j,y}\right)$};
 
 %{k<-x, i<-y}
-\node[right = 1cm of b, anchor=west] (e) {$\displaystyle\Gamma^\xh{}_{\yh j}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\yh,j}+g_{\xh j,y}-g_{\yh j,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\yh,j}+g_{\yh j,y}-g_{\yh j,y}\right)$};
+\node[right = 1cm of x, anchor=west] (xy) {$\displaystyle\Gamma^\xh{}_{\yh j}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\yh,j}+g_{\xh j,y}-g_{\yh j,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\yh,j}+g_{\yh j,y}-g_{\yh j,y}\right)$};
 
 %{k<-y, i<-x}
-\node[left = 1cm of c, anchor=east] (f) {$\displaystyle\Gamma^\yh{}_{\xh j}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\xh,j}+g_{\xh j,x}-g_{\xh j,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\xh,j}+g_{\yh j,x}-g_{\xh j,y}\right)$};
+\node[left = 1cm of y, anchor=east] (yx) {$\displaystyle\Gamma^\yh{}_{\xh j}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\xh,j}+g_{\xh j,x}-g_{\xh j,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\xh,j}+g_{\yh j,x}-g_{\xh j,y}\right)$};
 
 %{k<-y, i<-y}
-\node[right = 1cm of c, anchor=west] (g) {$\displaystyle\Gamma^\yh{}_{\yh j}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\yh,j}+g_{\xh j,y}-g_{\yh j,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\yh,j}+g_{\yh j,y}-g_{\yh j,y}\right)$};
+\node[right = 1cm of y, anchor=west] (yy) {$\displaystyle\Gamma^\yh{}_{\yh j}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\yh,j}+g_{\xh j,y}-g_{\yh j,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\yh,j}+g_{\yh j,y}-g_{\yh j,y}\right)$};
 
-\draw[->] (a.north) -> node[above=0pt, sloped] {\tiny$k\leftarrow\xh$} (b.south);
-\draw[->] (a.south) -> node[above=0pt, sloped] {\tiny$k\leftarrow\yh$} (c.north);
-\draw[->] (b.west) -> node[above=0pt, sloped] {\tiny$i\leftarrow\xh$} (d.east);
-\draw[->] (b.east) -> node[above=0pt, sloped] {\tiny$i\leftarrow\yh$} (e.west);
-\draw[->] (c.west) -> node[above=0pt, sloped] {\tiny$i\leftarrow\xh$} (f.east);
-\draw[->] (c.east) -> node[above=0pt, sloped] {\tiny$i\leftarrow\yh$} (g.west);
+
+%{k<-x, i<-x, j<-x}
+\node[above = 1cm of xx, anchor=south] (xxx) {$\displaystyle\Gamma^\xh{}_{\xh \xh}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\xh,x}+g_{\xh \xh,x}-g_{\xh \xh,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\xh,x}+g_{\yh \xh,x}-g_{\xh \xh,y}\right)$};
+%{k<-x, i<-x, j<-y}
+\node[below = 1cm of xx, anchor=north] (xxy) {$\displaystyle\Gamma^\xh{}_{\xh \yh}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\xh,j}+g_{\xh j,x}-g_{\xh j,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\xh,j}+g_{\yh j,x}-g_{\xh j,y}\right)$};
+
+
+%{k<-x, i<-y, j<-x}
+\node[above = 1cm of xy, anchor=south] (xyx) {$\displaystyle\Gamma^\xh{}_{\yh \xh}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\yh,x}+g_{\xh \xh,y}-g_{\yh \xh,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\yh,x}+g_{\yh \xh,y}-g_{\yh \xh,y}\right)$};
+%{k<-x, i<-y, j<-y}
+\node[below = 1cm of xy, anchor=north] (xyy) {$\displaystyle\Gamma^\xh{}_{\yh \yh}=\frac{1}{2}g^{\xh\xh}\left(g_{\xh\yh,y}+g_{\xh \yh,y}-g_{\yh \yh,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\yh,y}+g_{\yh \yh,y}-g_{\yh \yh,y}\right)$};
+
+%{k<-y, i<-x, j<-x}
+\node[above = 1cm of yx, anchor=south] (yxx) {$\displaystyle\Gamma^\yh{}_{\xh \xh}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\xh,x}+g_{\xh \xh,x}-g_{\xh \xh,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\xh,x}+g_{\yh \xh,x}-g_{\xh \xh,y}\right)$};
+%{k<-y, i<-x, j<-y}
+\node[below = 1cm of yx, anchor=north] (yxy) {$\displaystyle\Gamma^\yh{}_{\xh \yh}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\xh,y}+g_{\xh \yh,x}-g_{\xh \yh,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\xh,y}+g_{\yh \yh,x}-g_{\xh \yh,y}\right)$};
+
+%{k<-y, i<-y, j<-x}
+\node[above = 1cm of yy, anchor=south] (yyx) {$\displaystyle\Gamma^\yh{}_{\yh \xh}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\yh,x}+g_{\xh \xh,y}-g_{\yh \xh,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\yh,x}+g_{\yh \xh,y}-g_{\yh \xh,y}\right)$};
+%{k<-y, i<-y, j<-y}
+\node[below = 1cm of yy, anchor=north] (yyy) {$\displaystyle\Gamma^\yh{}_{\yh \yh}=\frac{1}{2}g^{\yh\xh}\left(g_{\xh\yh,y}+g_{\xh \yh,y}-g_{\yh \yh,x}\right)+\frac{1}{2}g^{\yh\yh}\left(g_{\yh\yh,y}+g_{\yh \yh,y}-g_{\yh \yh,y}\right)$};
+
+% xxxg
+\node[left = 1cm of xxx, anchor=east] (xxxg) {$\displaystyle\Gamma^\xh{}_{\xh \xh}=\frac{1}{2}1\left(1_{,x}+1_{,x}-1_{,x}\right)+\frac{1}{2}g^{\xh\yh}\left(g_{\yh\xh,x}+g_{\yh \xh,x}-g_{\xh \xh,y}\right)$};
+% xxyg
+\node[left = 1cm of xxy, anchor=east] (xxyg) {};
+% yxxg
+\node[left = 1cm of yxx, anchor=east] (yxxg) {};
+% yxyg
+\node[left = 1cm of yxy, anchor=east] (yxyg) {};
+
+% xyxg
+\node[right = 1cm of xyx, anchor=west] (xyxg) {};
+% xyyg
+\node[right = 1cm of xyy, anchor=west] (xyyg) {};
+% yyxg
+\node[right = 1cm of yyx, anchor=west] (yyxg) {};
+% yyyg
+\node[right = 1cm of yyy, anchor=west] (yyyg) {};
+
+
+\draw[->] (root.north) -> node[right=0pt] {\tiny$k/\xh$} (x.south);
+\draw[->] (root.south) -> node[right=0pt] {\tiny$k/\yh$} (y.north);
+\draw[->] (x.west) -> node[above=0pt, sloped] {\tiny$i/\xh$} (xx.east);
+\draw[->] (x.east) -> node[above=0pt, sloped] {\tiny$i/\yh$} (xy.west);
+\draw[->] (y.west) -> node[above=0pt, sloped] {\tiny$i/\xh$} (yx.east);
+\draw[->] (y.east) -> node[above=0pt, sloped] {\tiny$i/\yh$} (yy.west);
+\draw[->] (xx.north) -> node[right=0pt] {\tiny$j/\xh$} (xxx.south);
+\draw[->] (xx.south) -> node[right=0pt] {\tiny$j/\yh$} (xxy.north);
+\draw[->] (xy.north) -> node[right=0pt] {\tiny$j/\xh$} (xyx.south);
+\draw[->] (xy.south) -> node[right=0pt] {\tiny$j/\yh$} (xyy.north);
+\draw[->] (yx.north) -> node[right=0pt] {\tiny$j/\xh$} (yxx.south);
+\draw[->] (yx.south) -> node[right=0pt] {\tiny$j/\yh$} (yxy.north);
+\draw[->] (yy.north) -> node[right=0pt] {\tiny$j/\xh$} (yyx.south);
+\draw[->] (yy.south) -> node[right=0pt] {\tiny$j/\yh$} (yyy.north);
 
 \end{tikzpicture}
 \end{center}
